@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwt-ex?useSSL=false&serverTimezone=UTC
+    username: root
+    password: Br.$1453
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect  # MySQL8Dialect olarak güncellendi
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # MySQL5InnoDBDialect'ten MySQL8Dialect olarak güncellendi
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # bir gün
+      refresh-token:
+        expiration: 604800000 # 7 gün
